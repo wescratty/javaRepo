@@ -7,8 +7,7 @@ public class SampleMain {
 		int max =51;
 for (int i = 1; i < max; i++) {
 	System.out.println("Iteration number:"+i);
-	System.out.println("Iteration number:"+max);
-
+	
 }
 	}
 
