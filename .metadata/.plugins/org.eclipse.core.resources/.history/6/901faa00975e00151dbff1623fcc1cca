@@ -1,0 +1,23 @@
+package implementationProg;
+
+
+public class calcDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		singleAdder myAdder = singleAdder.getInstance();
+		myAdder.addMath("3");
+		myAdder.addMath("^");
+		myAdder.addMath("5");
+
+		myAdder.print();
+		
+		FunctionClass myFunc = new FunctionClass();
+		
+		System.out.println(myFunc.calculate(Integer.parseInt(myAdder.getNext()), myAdder.getNext(), Integer.parseInt(myAdder.getNext()))); 
+
+	}
+
+}

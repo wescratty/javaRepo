@@ -1,0 +1,178 @@
+import java.awt.Graphics;
+
+public class bodyClass extends soalClass {
+
+	int hipPointY = 0;
+	int hipPointX = 0;
+	int neckPointX = 0;
+	int neckPointY = 0;
+	int shoulderPointX = 0;
+	int shoulderPointY = 0;
+	int neckLength = 0;
+	int pointX = 0;
+	int pointY = 0;
+	int curentPoint=0;
+	boolean increment = false;
+	public bodyClass() {
+//		rotate = 0;
+//		degrease = 0;
+//		theta = 0;
+		 num = 0;
+		
+//		x = 0;
+//		y = 0;
+//		xs = 0;
+//		ys = 0;
+		
+		rad = 1;
+	}
+
+	public void move(double thetaIncrease) {
+		
+	//rad+=	thetaIncrease;
+		//pointY -= thetaIncrease;
+		if (curentPoint > pointY+2) {
+			
+			increment = true;
+			
+		}
+		if (curentPoint  < pointY-2) {
+			
+			increment = false;
+		}
+		if (increment) {
+			pointY += thetaIncrease;
+		} else if(!increment) {
+			pointY -= thetaIncrease;
+
+		}
+//		System.out.println("pointY:"+pointY+"--------------curentPoint----------------"+curentPoint);
+	}
+
+	public void math() {
+		theta = (((rad) * Math.PI) / 12);
+		x =  pointX + (int) ((boneLength) * Math.cos(theta));
+		y = pointY + (int) ((boneLength) * Math.sin(theta));
+	}
+
+	public void connectPart() {
+		xs = pointX;
+		ys = pointY;
+		
+		hipPointX = x;
+		hipPointY = y;
+		neckPointX = pointX;
+		neckPointY = pointY;
+		shoulderPointX=    pointX + (int) ((neckLength) * Math.cos(theta));
+		shoulderPointY=    pointY + (int) ((neckLength) * Math.sin(theta));
+//System.out.println("body\nxs: "+xs+"\nys: "+ys+"\nx: "+x+"\ny :"+y);
+	}
+
+	public void connectPart(int x, int y) {
+
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	public void setCurrentPoint(){
+		curentPoint=pointY;
+	}
+	
+	public void setPoint(int x,int y)
+	{
+		pointX = x;
+		pointY =y;
+	}
+	
+	 public void setNeckLength(int neckLength) {
+		this.neckLength = neckLength;
+	}
+	
+	
+	public int getNeckPointX() {
+		return neckPointX;
+	}public int getNeckPointY() {
+		return neckPointY;
+	}
+	
+	public int getnum() {
+		return num;
+	}
+	public void setnum(int num) {
+		this.num = num;
+	}
+	public void setBoneLength(int boneLength) {
+	
+		super.setBoneLength(boneLength);
+	}
+
+	public int getShoulderPointX() {
+		return shoulderPointX;
+	}
+	public int getShoulderPointY() {
+		return shoulderPointY;
+	}
+
+	public int getHipPointX() {
+		return hipPointX;
+	}
+
+	public void setHipPointX(int hipPoint) {
+		this.hipPointX = hipPoint;
+	}
+
+	public int getHipPointY() {
+		return hipPointY;
+	}
+
+	public void setHipPointY(int hipPoint) {
+		this.hipPointY = hipPoint;
+	}
+
+	public void setShoulderPointX(int shoulderPoint) {
+		this.neckPointX = shoulderPoint;
+	}
+
+	public int getBoneLength() {
+		return boneLength;
+	}
+
+	public int getXs() {
+		return xs;
+	}
+
+	public void setXs(int xs) {
+		this.xs = xs;
+	}
+
+	public int getYs() {
+		return ys;
+	}
+
+	public void setYs(int ys) {
+		this.ys = ys;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+}

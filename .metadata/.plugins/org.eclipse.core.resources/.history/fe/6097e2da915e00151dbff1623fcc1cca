@@ -1,0 +1,15 @@
+package implementationProg;
+
+
+public class calcDriver {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		singleAdder myAdder =singleAdder.getInstance();
+		myAdder.addMath("the ");
+
+	}
+
+}

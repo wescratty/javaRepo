@@ -1,0 +1,343 @@
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.PointerInfo;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+
+
+public class frankinClass extends JPanel {
+	
+    int i=500;
+	int rotate = 0;
+	int degrease = 0;
+	double theta = 0;
+	double rad = 0;
+	int scaler =20;
+	int xx=0;
+	int yy=0;
+	
+	int boneLength = 0;
+	
+	ArrayList<Point> pointListStart = new ArrayList<Point>();
+	ArrayList<Point> pointListFinish = new ArrayList<Point>();
+	Point Startpoint;
+	Cursor Endpoint;
+	headClass head = new headClass();
+
+	bodyClass body = new bodyClass();
+
+	limbClass pelvis = new limbClass();
+	femerClass legR = new femerClass();
+	femerClass legL = new femerClass();
+
+	calfClass calfR = new calfClass();
+	calfClass calfL = new calfClass();
+
+	footClass footR = new footClass();
+	footClass footL = new footClass();
+
+	armClass armR = new armClass();
+	armClass armL = new armClass();
+
+	forArmClass fArmR = new forArmClass();
+	forArmClass fArmL = new forArmClass();
+	
+
+	
+	Timer time = new Timer(2, new buttonListener());
+
+	public frankinClass() {
+		setPreferredSize(new Dimension(1000, 1000));
+		addMouseListener(new clickListener());
+		//body.set�(500);
+		min();
+		System.out.println("new");
+		makeBody();
+		body.setCurrentPoint();
+		time.start();
+		
+	}
+
+	private class buttonListener implements ActionListener {
+		public void actionPerformed(ActionEvent event) {
+			//
+			if (event.getSource() == time) {// runs sim
+				//body.set�(i);
+				scaler=20;
+				theta=.02;
+//				makeBody();
+				
+				
+			}
+			
+//			if(event.getSource() == click)
+//			{
+//				
+//			}
+		}
+	}
+public void makeBody()//this needs to set current local
+{
+	body.setRad(6);
+	//body.setCurrent_radian(6);
+	set_current_Radians();
+	//body.move(theta/8);
+
+	body.setBoneLength(9*scaler);
+	body.setNeckLength(2*scaler);
+	body.move(.08);
+	body.math();
+	body.connectPart();
+
+	head.setnum(body.getNeckPointX(), body.getNeckPointY());
+	head.setBoneLength(2*scaler,2*scaler);
+	head.math();
+	head.connectPart();
+
+	pelvis.setnum(body.getHipPointX(), body.getHipPointY());
+	pelvis.math();
+	pelvis.connectPart();
+
+	
+//bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+	legR.setXs(pelvis.getX());
+	legR.setYs(pelvis.getY());
+	legR.setBoneLength(6*scaler);
+	legR.move(theta);
+	legR.math();
+	legR.connectPart();
+
+	calfR.setXs(legR.getX());
+	calfR.setYs(legR.getY());
+	calfR.setBoneLength(4*scaler);
+	calfR.move(theta);
+	calfR.math();
+	calfR.connectPart();
+
+	footR.setXs(calfR.getX());
+	footR.setYs(calfR.getY());
+	footR.setBoneLength(2*scaler);
+	footR.move(theta);
+	
+	footR.math();
+	footR.connectPart();
+	//nnnnnnnnnnnnnnn
+	legL.setXs(pelvis.getX());
+	legL.setYs(pelvis.getY());
+	legL.setBoneLength(6*scaler);
+	legL.move(theta);
+	legL.math();
+	legL.connectPart();
+
+	calfL.setXs(legL.getX());
+	calfL.setYs(legL.getY());
+	calfL.setBoneLength(4*scaler);
+	calfL.move(theta);
+	calfL.math();
+	calfL.connectPart();
+
+	footL.setXs(calfL.getX());
+	footL.setYs(calfL.getY());
+	footL.setBoneLength(2*scaler);
+	footL.move(theta);
+	
+	footL.math();
+	footL.connectPart();
+	//vvvvvvvvvvvvvvvvvv
+
+	
+	armR.setnum(body.getShoulderPointX(), body.getShoulderPointY());
+	armR.setBoneLength(4*scaler);
+	armR.move(theta);
+	
+	armR.math();
+	armR.connectPart();
+	
+
+	fArmR.setnum(armR.getX(), armR.getY());
+	fArmR.setBoneLength(3*scaler);
+	fArmR.move(theta);
+	
+	fArmR.math();
+	fArmR.connectPart();
+	//mmmmmmmmmmmmmmmmmmmm
+	armL.setnum(body.getShoulderPointX(), body.getShoulderPointY());
+	armL.setBoneLength(4*scaler);
+	armL.move(theta);
+	
+	armL.math();
+	armL.connectPart();
+	
+
+	fArmL.setnum(armL.getX(), armL.getY());
+	fArmL.setBoneLength(3*scaler);
+	fArmL.move(theta);
+	
+	fArmL.math();
+	fArmL.connectPart();
+
+	repaint();
+}
+public void walk()
+{
+	
+}
+public void min()
+{
+	body.setRad(6);
+	head.setRad(body.getRad());
+	pelvis.setRad(1+body.getRad());
+	legR.setRad((9+pelvis.getRad()));
+	calfR.setRad(11+legR.getRad());
+	footR.setRad((calfR.getRad()));
+	//
+	legL.setRad((13+pelvis.getRad()));
+	calfL.setRad(11+legL.getRad());
+	footL.setRad((calfL.getRad()));
+	//
+	armR.setRad((12+body.getRad()));
+	fArmR.setRad((14+armR.getRad()));
+	armL.setRad((18+body.getRad()));
+	fArmL.setRad((19+armL.getRad()));
+}
+public void set_current_Radians()
+{
+	head.setRad(body.getRad());
+	pelvis.setRad(body.getRad());
+	
+	legR.setCurrent_radian((pelvis.getRad()));
+	calfR.setCurrent_radian(legR.getRad());
+	footR.setCurrent_radian((calfR.getRad()));
+	
+	legL.setCurrent_radian((pelvis.getRad()));
+	calfL.setCurrent_radian(legL.getRad());
+	footL.setCurrent_radian((calfL.getRad()));
+	
+	armR.setCurrent_radian(body.getRad());
+	fArmR.setCurrent_radian((armR.getCurrent_radian()));
+	armL.setCurrent_radian(body.getRad());
+	fArmL.setCurrent_radian((armL.getCurrent_radian()));
+}
+public void stand()
+{
+	body.setRad(6);
+	head.setRad(body.getRad());
+	pelvis.setRad(1+body.getRad());
+	legR.setRad(-(9+pelvis.getRad()));
+	calfR.setRad(legR.getRad());
+	footR.setRad(-(16+calfR.getRad()));
+	armR.setRad(1+body.getRad());
+	fArmR.setRad(-(12+armR.getRad()));
+	repaint();
+}
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+		
+		g.drawLine(body.getXs(), body.getYs(), body.getX(), body.getY());
+		g.drawLine(pelvis.getXs(), pelvis.getYs(), pelvis.getX(), pelvis.getY());
+		
+		g.drawLine(legR.getXs(), legR.getYs(), legR.getX(), legR.getY());
+		g.drawLine(calfR.getXs(), calfR.getYs(), calfR.getX(), calfR.getY());
+		g.drawLine(footR.getXs(), footR.getYs(), footR.getX(), footR.getY());
+		//
+		g.drawLine(legL.getXs(), legL.getYs(), legL.getX(), legL.getY());
+		g.drawLine(calfL.getXs(), calfL.getYs(), calfL.getX(), calfL.getY());
+		g.drawLine(footL.getXs(), footL.getYs(), footL.getX(), footL.getY());
+		//
+		g.drawLine(armR.getXs(), armR.getYs(), armR.getX(), armR.getY());
+		g.drawLine(fArmR.getXs(), fArmR.getYs(), fArmR.getX(), fArmR.getY());
+		
+		g.drawLine(armL.getXs(), armL.getYs(), armL.getX(), armL.getY());
+		g.drawLine(fArmL.getXs(), fArmL.getYs(), fArmL.getX(), fArmL.getY());
+		//g.setColor(Color.BLUE);
+		g.drawArc(head.getXs(), head.getYs(), head.getWidth(), head.getHight(),(int)body.getRad(),360);
+		//Endpoint =(getLocationOnScreen());
+		
+//		PointerInfo a = MouseInfo.getPointerInfo();
+//		Point b  = a.getLocation();
+//		 xx = (int)b.getX();
+//		 yy = (int)b.getY();
+//		g.drawLine(Startpoint.x,Startpoint.y,xx,yy);
+		
+		int i=0;
+		try {
+			
+			for (Point spot: pointListStart) {
+				
+				Point finish= pointListFinish.get(i);
+				g.drawLine(spot.x,spot.y, finish.x,finish.y);
+				i++;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+			
+		
+		}
+		
+	}
+	
+	private class  clickListener implements MouseListener
+	{
+	
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+		Point point =(e.getPoint());
+		//Startpoint =(e.getPoint());
+		body.setPoint(point.x,point.y);
+		
+		makeBody();
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+		Startpoint =(e.getPoint());
+		
+		pointListStart.add (e.getPoint());
+		
+		repaint();
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		
+//		
+		pointListFinish.add (e.getPoint());
+		repaint();
+//Endpoint =(e.getLocationOnScreen());
+	}
+	}
+	
+
+}

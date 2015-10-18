@@ -1,0 +1,81 @@
+package multiSIngleton;
+
+public class multiSingletonMain {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+
+		Thread[] weave = new Thread[10];
+
+		for (int i = 0; i < weave.length; i++) {
+			weave[i] = new Thread(new Singleton());
+		}
+
+		for (int i = 0; i < weave.length; i++) {
+			weave[i].start();
+			;
+		}
+
+		for (int i = 0; i < weave.length; i++) {
+			weave[i].join();
+		}
+
+	}
+}
+
+class Singleton implements Runnable {
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			printStats(Instance(), counter += 1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public static Singleton Instance() throws InterruptedException {
+		if (_instance == null) {
+			simulateRandomActivity();
+//			synchronized (Singleton.class)
+			{
+
+				// ----- Second lock -----
+				if (_instance == null) {
+					_instance = new Singleton();
+
+					System.out.println("\nNew object  "
+							+ System.identityHashCode(_instance)
+							+ "\t Born on:   " + _instance.startTime);// print if made new
+																		
+				}
+			}
+		}
+		return _instance;
+	}
+
+	protected Singleton() {}
+
+	public void  printStats(Singleton current, int i) {
+		System.out.print("\nObj[" + i + "]. lcl "
+				+ System.identityHashCode(current));// check to see if their
+													// address is the same
+	}
+
+	private static void simulateRandomActivity() throws InterruptedException {
+		if (firstThread) {
+			firstThread = false;
+			Thread.currentThread().sleep(1);
+			
+			// This nap should give the second thread enough time
+			// to get by the first thread.
+		}
+
+	}
+
+	private static Singleton _instance = null;
+	public final long startTime = System.currentTimeMillis();
+	public static int counter = 0;
+	private static boolean firstThread = true;
+
+}

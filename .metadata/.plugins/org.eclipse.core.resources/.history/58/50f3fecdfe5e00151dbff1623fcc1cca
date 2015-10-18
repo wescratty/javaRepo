@@ -1,0 +1,21 @@
+
+//public class GraphDriver {
+//
+//}
+import javax.swing.JFrame;
+
+import java.awt.*;
+import java.awt.geom.*;
+import javax.swing.*;
+ 
+public class GraphDriver{
+ 
+    public static void main(String[] args) {
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(new mainPanel());
+        f.setSize(400,400);
+        f.setLocation(200,200);
+        f.setVisible(true);
+    }
+}

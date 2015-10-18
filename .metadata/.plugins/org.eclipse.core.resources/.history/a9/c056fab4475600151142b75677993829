@@ -1,0 +1,39 @@
+package Singleton_1;
+
+public class SingletonJ {
+
+	public static void main(String[] args)  {
+		// TODO Auto-generated method stub
+
+		
+		Singleton[] mySingletonArray = new Singleton[5];//Array of objects
+		
+		for(int i = 0;i<5;i++){
+			mySingletonArray[i] = Singleton.Instance();//get 5 singletons
+			System.out.println("\n"+System.identityHashCode(mySingletonArray[i]));// check to see if their address is the same
+			System.out.println("\n"+mySingletonArray[i].startTime);
+			System.out.println("\n ST address: "+System.identityHashCode(mySingletonArray[i].startTime));
+		}
+	}
+}
+
+class Singleton 
+{
+	public long startTime = System.currentTimeMillis();
+	public static Singleton Instance()  {
+     if (_instance == null) {
+         synchronized (Singleton.class) {
+        	
+        	 //----- Second lock -----
+             if (_instance == null) {
+                 _instance = new Singleton();
+                 System.out.println("\nNew:  "+System.identityHashCode(_instance)+" Born on "+_instance.startTime);// print if made new
+             }
+             
+          }
+     }
+     return _instance;      
+ }
+ protected Singleton() {}
+ private static Singleton _instance = null;
+}

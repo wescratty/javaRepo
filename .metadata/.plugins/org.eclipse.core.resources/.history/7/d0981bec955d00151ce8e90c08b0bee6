@@ -1,0 +1,136 @@
+public class limbClass {
+	int hipPointY = 0;
+	int hipPointX = 0;
+	int shoulderPoint = 0;
+
+	protected int rotate = 0;
+	protected int degrease = 0;
+	protected double theta = 0;
+	protected double rad = 0;
+
+	// bodyClass body = new bodyClass();
+	// body.
+	protected int num1 = 0;
+
+	protected int x = 0;
+	protected int y = 0;
+	protected int xs = 0;
+
+	protected int ys = 0;
+	protected double max = 0;
+	protected double parent_radian = 0;
+	protected double min = 0;
+
+	protected int boneLength = 10;
+	protected boolean increment = true;
+
+	public limbClass() {
+
+	}
+
+	public void move() {
+
+	}
+
+	public void math() {
+		theta = (((rad) * Math.PI) / 12);
+		x = xs + (int) ((boneLength) * Math.cos(theta));
+		y = ys + (int) ((boneLength) * Math.sin(theta));
+	}
+
+	public void connectPart() {
+
+		System.out.println("pelvis\nxs: " + xs + "\nys: " + ys + "\nx: " + x
+				+ "\ny :" + y);
+
+	}
+public void setCurrent_radian(double current_radian) {
+	this.parent_radian = current_radian;
+}
+	public void setMax(double max) {
+		this.max = max;
+	}
+	public void setMin(double min) {
+		this.min = min;
+	}
+	public void setnum(int x, int y) {
+		xs = x;
+		ys = y;
+
+	}
+
+	public double getRad() {
+		return rad;
+	}
+
+	public void setRad(double rad) {
+
+//		if (rad > max) {
+//			increment = false;
+//
+//		} else if (rad < min) {
+//			increment = true;
+//
+//		}
+//		if (increment) {
+//			this.rad = this.rad + rad;
+//		} else {
+//			this.rad = this.rad - rad;
+//
+//		}
+		this.rad = rad+2;
+//		min=rad-3;
+//		max=rad+3;
+	}
+public double getCurrent_radian() {
+	return parent_radian;
+}
+	public double getTheta() {
+		return theta;
+	}
+
+	public void setTheta(double theta) {
+		this.theta = theta;
+	}
+
+	public int getBoneLength() {
+		return boneLength;
+	}
+
+	public void setBoneLength(int boneLength) {
+		this.boneLength = boneLength;
+	}
+
+	public int getXs() {
+		return xs;
+	}
+
+	public void setXs(int xs) {
+		this.xs = xs;
+	}
+
+	public int getYs() {
+		return ys;
+	}
+
+	public void setYs(int ys) {
+		this.ys = ys;
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+
+}
