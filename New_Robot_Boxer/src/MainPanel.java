@@ -16,9 +16,7 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 
-/**
- * Created by wescratty on 10/17/15.
- */
+
 public class MainPanel extends JPanel {
 
     public MainPanel() {
@@ -26,6 +24,8 @@ public class MainPanel extends JPanel {
 
         JLabel  fatigueLblP1, strengthLblP1, agilityLblP1, fatigueLblP2, strengthLblP2, agilityLblP2;
         JPanel labelPanel = new JPanel();
+
+
 
 
 
@@ -57,6 +57,7 @@ public class MainPanel extends JPanel {
     }
 
 // added a comment
+    //added another comment
 
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
