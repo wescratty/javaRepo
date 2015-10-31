@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba00578a-eefd-47c4-96d2-107bad458190" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/src/MainPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/MainPanel.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/NewRobot.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/src/gui.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/gui.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../newRobotBoxer/src/gui.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/.idea/copyright/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../robotBoxer/robotBoxer.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../NewRobot/.idea/vcs.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.history/0/704982e08e5e00151dbff1623fcc1cca" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.history/10/60e459b0de5e00151dbff1623fcc1cca" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.history/11/80bf99629d5d00151ce8e90c08b0bee6" afterPath="" />
@@ -96,10 +84,13 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.root/17.tree" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../Graph/out/production/Graph/CSV.class" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../Graph/out/production/Graph/Graph.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Robotboxer/Boxer/Boxer.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Robotboxer/gui/gui.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../Robotboxer/gui/src/MainPanel.java" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../Robotboxer/gui/src/gui.java" afterPath="" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/../Graph/out/production/Graph/functionClass.class" afterPath="$PROJECT_DIR$/../Graph/out/production/Graph/FunctionClass.class" />
       <change type="MOVED" beforePath="$PROJECT_DIR$/../Graph/src/functionClass.java" afterPath="$PROJECT_DIR$/../Graph/src/FunctionClass.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/../robotBoxer/Robotboxer.iml" afterPath="$PROJECT_DIR$/../robotBoxer/robotBoxer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/Graph/.markers" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/Graph/.markers" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.metadata/.mylyn/.tasks.xml.zip" afterPath="$PROJECT_DIR$/../.metadata/.mylyn/.tasks.xml.zip" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Graph/out/production/Graph/AudioClass.class" afterPath="$PROJECT_DIR$/../Graph/out/production/Graph/AudioClass.class" />
@@ -118,9 +109,11 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Graph/src/GraphClass.java" afterPath="$PROJECT_DIR$/../Graph/src/GraphClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Graph/src/GraphDriver.java" afterPath="$PROJECT_DIR$/../Graph/src/GraphDriver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../implementProjSingleton/src/MainObserver.java" afterPath="$PROJECT_DIR$/../implementProjSingleton/src/MainObserver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainPanel.java" afterPath="$PROJECT_DIR$/src/MainPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../implementProjSingleton/src/MainPanel.java" afterPath="$PROJECT_DIR$/../implementProjSingleton/src/MainPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Graph/src/MemoryUsageLogClass.java" afterPath="$PROJECT_DIR$/../Graph/src/MemoryUsageLogClass.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../newRobotBoxer/src/gui.java" afterPath="$PROJECT_DIR$/../newRobotBoxer/src/gui.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Graph/src/mainPanel.java" afterPath="$PROJECT_DIR$/../Graph/src/mainPanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Graph/.idea/misc.xml" afterPath="$PROJECT_DIR$/../Graph/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.metadata/version.ini" afterPath="$PROJECT_DIR$/../.metadata/version.ini" />
@@ -148,11 +141,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainPanel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.34969324">
+              <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,10 +153,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/gui.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31288344">
+            <state vertical-scroll-proportion="0.0">
               <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding />
             </state>
@@ -190,8 +183,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/MainPanel.java" />
         <option value="$PROJECT_DIR$/src/gui.java" />
+        <option value="$PROJECT_DIR$/src/MainPanel.java" />
       </list>
     </option>
   </component>
@@ -448,6 +441,9 @@
     </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="ba00578a-eefd-47c4-96d2-107bad458190" name="Default" comment="" />
@@ -498,21 +494,21 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
+    <entry file="file://$PROJECT_DIR$/src/gui.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="0" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui.java">
+    <entry file="file://$PROJECT_DIR$/src/MainPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31288344">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.34969324">
+          <caret line="58" column="18" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
